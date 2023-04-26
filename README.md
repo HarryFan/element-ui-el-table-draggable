@@ -6,16 +6,14 @@
 
 *   Vue.js v2.6.14
     
-*   Element-UI v2.15.1
-    
-*     
+*   Element-UI v2.15.1 
     
 
 *   在Vue組件中導入Element-UI和Sortable.js庫：
     
 
 ```
-javascriptCopy codeimport Sortable from 'sortablejs'import { ElTable, ElTableColumn } from 'element-ui'export default {  name: 'DraggableTable',  components: {    ElTable,    ElTableColumn
+import Sortable from 'sortablejs'import { ElTable, ElTableColumn } from 'element-ui'export default {  name: 'DraggableTable',  components: {    ElTable,    ElTableColumn
   },  data() {    return {      //表格數據
       tableData: \[ /*...*/ \],      //表頭列數據
       dropCol: \[ /*...*/ \]
@@ -34,7 +32,7 @@ javascriptCopy codeimport Sortable from 'sortablejs'import { ElTable, ElT
     
 
 ```
-javascriptCopy codeimport Sortable from 'sortablejs'import { ElTable, ElTableColumn } from 'element-ui'export default {  name: 'DraggableTable',  components: {    ElTable,    ElTableColumn
+import Sortable from 'sortablejs'import { ElTable, ElTableColumn } from 'element-ui'export default {  name: 'DraggableTable',  components: {    ElTable,    ElTableColumn
   },  data() {    return {      //表格數據
       tableData: \[ /*...*/ \],      //表頭列數據
       dropCol: \[ /*...*/ \]
@@ -46,7 +44,7 @@ javascriptCopy codeimport Sortable from 'sortablejs'import { ElTable, ElT
 *   實現行拖拽效果：
     
 *   ```
-    javascriptCopy code//獲取表格tbody元素const tbody = document.querySelector('.el-table\_\_body-wrapper tbody')//使用Sortable.js庫實現行拖拽Sortable.create(tbody, {  onEnd({ newIndex, oldIndex }) {    const currRow = \_this.tableData.splice(oldIndex, 1)\[0\]
+//獲取表格tbody元素const tbody = document.querySelector('.el-table\_\_body-wrapper tbody')//使用Sortable.js庫實現行拖拽Sortable.create(tbody, {  onEnd({ newIndex, oldIndex }) {    const currRow = \_this.tableData.splice(oldIndex, 1)\[0\]
         _this.tableData.splice(newIndex, 0, currRow)
       }
     })
@@ -54,7 +52,7 @@ javascriptCopy codeimport Sortable from 'sortablejs'import { ElTable, ElT
 *   實現列拖拽效果：
     
 *   ```
-    kotlinCopy code//獲取表頭tr元素const wrapperTr = document.querySelector('.el-table__header-wrapper tr')//使用Sortable.js庫實現列拖拽this.sortable = Sortable.create(wrapperTr, {
+//獲取表頭tr元素const wrapperTr = document.querySelector('.el-table__header-wrapper tr')//使用Sortable.js庫實現列拖拽this.sortable = Sortable.create(wrapperTr, {
       onEnd: evt => {    const oldItem = this.dropCol\[evt.oldIndex\]    this.dropCol.splice(evt.oldIndex, 1)    this.dropCol.splice(evt.newIndex, 0, oldItem)
       }
     })
@@ -70,13 +68,11 @@ javascriptCopy codeimport Sortable from 'sortablejs'import { ElTable, ElT
 *   最後，可以在Vue組件的mounted()生命週期鈎子中調用行拖拽和列拖拽的方法，實現Table組件的拖拽效果：
     
 *   ```
-    javascriptCopy codemounted() {  this.rowDrop()  this.columnDrop()
+mounted() {  this.rowDrop()  this.columnDrop()
     },methods: {  rowDrop() { /*...*/ },  columnDrop() { /*...*/ }
     }
     ```
-*   總結： 本文通過介紹Vue 2和Element-
-    
-*   -UI中Table組件的拖拽效果的實現方法，具體實現步驟包括導入Sortable.js庫、獲取表格元素、設置行拖拽和列拖拽的回調函數等。
+*   總結： 本文通過介紹Vue 2和Element-UI中Table組件的拖拽效果的實現方法，具體實現步驟包括導入Sortable.js庫、獲取表格元素、設置行拖拽和列拖拽的回調函數等。
     
 *   行拖拽實現步驟為：獲取表格的tbody元素 -> 使用Sortable.js庫實現拖拽效果 -> 實現onEnd回調函數，更新表格數據。
     
