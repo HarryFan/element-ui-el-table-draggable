@@ -59,37 +59,37 @@
         tableData: [
           {
             id: '1',
-            date: '2016-05-02',
-            name: '王小虎1',
-            address: '上海市普陀區金沙江路 100 弄'
+            date: '2023-01-02',
+            name: '林小明1',
+            address: '台北市大安區通化街 100 巷'
           },
           {
             id: '2',
-            date: '2016-05-04',
-            name: '王小虎2',
-            address: '上海市普陀區金沙江路 200 弄'
+            date: '2023-01-04',
+            name: '林小明2',
+            address: '台北市大安區通化街 200 巷'
           },
           {
             id: '3',
-            date: '2016-05-01',
-            name: '王小虎3',
-            address: '上海市普陀區金沙江路 300 弄'
+            date: '2023-01-01',
+            name: '林小明3',
+            address: '台北市大安區通化街 300 巷'
           },
           {
             id: '4',
-            date: '2016-05-03',
-            name: '王小虎4',
-            address: '上海市普陀區金沙江路 400 弄'
+            date: '2023-01-03',
+            name: '林小明4',
+            address: '台北市大安區通化街 400 巷'
           }
         ]
       }
     },
     mounted() {
-      this.rowDrop()
-      this.columnDrop()
+      this.rowDrop() // 行拖拽
+      this.columnDrop() // 列拖拽
     },
     methods: {
-      //行拖拽
+      // 行拖拽
       rowDrop() {
         const tbody = document.querySelector('.el-table__body-wrapper tbody')
         const _this = this
@@ -103,7 +103,7 @@
           }
         })
       },
-      //列拖拽
+      // 列拖拽
       columnDrop() {
         const wrapperTr = document.querySelector('.el-table__header-wrapper tr')
         this.sortable = Sortable.create(wrapperTr, {
