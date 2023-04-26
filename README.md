@@ -67,7 +67,7 @@ import Sortable from 'sortablejs'import { ElTable, ElTableColumn } from�
     ```
 *   最後，可以在Vue組件的mounted()生命週期鈎子中調用行拖拽和列拖拽的方法，實現Table組件的拖拽效果：
     
-*   ```
+```
 mounted() {  this.rowDrop()  this.columnDrop()
     },methods: {  rowDrop() { /*...*/ },  columnDrop() { /*...*/ }
     }
